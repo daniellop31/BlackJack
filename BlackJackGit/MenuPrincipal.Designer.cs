@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnUnJugador = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnUnJugador
+            // 
+            this.btnUnJugador.Location = new System.Drawing.Point(12, 12);
+            this.btnUnJugador.Name = "btnUnJugador";
+            this.btnUnJugador.Size = new System.Drawing.Size(75, 23);
+            this.btnUnJugador.TabIndex = 0;
+            this.btnUnJugador.Text = "Un jugador";
+            this.btnUnJugador.UseVisualStyleBackColor = true;
+            // 
+            // MenuPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnUnJugador);
+            this.Name = "MenuPrincipal";
+            this.Text = "Menu principal";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnUnJugador;
     }
 }
 
