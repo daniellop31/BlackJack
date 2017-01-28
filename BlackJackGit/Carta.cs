@@ -8,6 +8,7 @@ namespace BlackJackGit
 {
     class Carta
     {
+        //ESTO ES UNA CARTA
         string nombre;
         int valor;
         int codigo;
