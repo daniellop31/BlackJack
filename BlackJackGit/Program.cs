@@ -16,7 +16,8 @@ namespace BlackJackGit
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+            Procesos.iniciarArreglo();
+            Application.Run(new Tablero());
         }
     }
 }

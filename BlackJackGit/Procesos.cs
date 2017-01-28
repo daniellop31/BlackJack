@@ -10,7 +10,7 @@ namespace BlackJackGit
     {
         public static string[] codigoCartas = new string[13];
 
-        private Procesos()
+        public static void iniciarArreglo()
         {
             codigoCartas[0] = "A";
             codigoCartas[1] = "Uno";
@@ -25,7 +25,7 @@ namespace BlackJackGit
             codigoCartas[10] = "J";
             codigoCartas[11] = "Q";
             codigoCartas[12] = "K";
-        }
+        }        
     }
 }
 

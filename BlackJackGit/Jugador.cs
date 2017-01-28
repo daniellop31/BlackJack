@@ -8,29 +8,14 @@ namespace BlackJackGit
 {
     class Jugador
     {
-        string nombre;
-        int apuesta;
-        List<Carta> cartas;
+        private string nombre;
+        private int apuesta;
+        private List<Carta> cartas = new List<Carta>();
+        private int puntaje;
 
         public Jugador(string nombre, int apuesta, List<Carta> cartas)
         {
             this.nombre = nombre;
-            this.apuesta = apuesta;
-            this.cartas = cartas;
-        }
-
-        public string Nombre
-        {
-            get
-            {
-                return nombre;
-            }
-
-            set
-            {
-                nombre = value;
-            }
         }
     }
 }
-
