@@ -19,6 +19,8 @@ namespace BlackJackGit
 
         private void btnUnJugador_Click(object sender, EventArgs e)
         {
+            //Aqui se inicializan los campos del jugador 2 para el form
+            //DatosDeJugadores
             Program.TipoJuego = Program.UN_JUGADOR;
             Random r = new Random();
             DatosDeJugadores formJ = new DatosDeJugadores();
@@ -33,6 +35,7 @@ namespace BlackJackGit
         private void btnDosJugadores_Click(object sender, EventArgs e)
         {
             Program.TipoJuego = Program.DOS_JUGADORES;
+            //Aqui solo se crea y se abre un nuevo formulario de DatosDeJugadores
             DatosDeJugadores formJ = new DatosDeJugadores();
             formJ.Show();
         }
