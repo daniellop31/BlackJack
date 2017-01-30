@@ -24,5 +24,16 @@ namespace BlackJackGit
         {
             InitializeComponent();
         }
+
+        //TODO: Terminar los siguientes métodos, organizar los jugadores para que se instacien y poder manipularlos
+        private void btnPedirCartaJ1_Click(object sender, EventArgs e)
+        {
+            Procesos.pedirCarta();
+        }
+
+        private void btnPedirCartaJ2_Click(object sender, EventArgs e)
+        {
+            Procesos.pedirCarta();
+        }
     }
 }

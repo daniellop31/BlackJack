@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace BlackJackGit
 {
-    class Carta
+    class Carta 
     {
         //ESTO ES UNA CARTA
         private string nombre;
         private int valor;
         private int codigo;
+        private Image imagen;
 
         public string Nombre
         {
@@ -49,6 +52,19 @@ namespace BlackJackGit
             set
             {
                 codigo = value;
+            }
+        }
+
+        public Image Imagen
+        {
+            get
+            {
+                return imagen;
+            }
+
+            set
+            {
+                imagen = value;
             }
         }
 
