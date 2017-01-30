@@ -28,81 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDosJugadores = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnInforme = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnDosJugadores = new System.Windows.Forms.Button();
+            this.btnUnJugador = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnDosJugadores
-            // 
-            this.btnDosJugadores.Location = new System.Drawing.Point(12, 14);
-            this.btnDosJugadores.Name = "btnDosJugadores";
-            this.btnDosJugadores.Size = new System.Drawing.Size(93, 23);
-            this.btnDosJugadores.TabIndex = 0;
-            this.btnDosJugadores.Text = "Un jugador";
-            this.btnDosJugadores.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Dos jugadores";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(12, 72);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(93, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnInforme
             // 
-            this.btnInforme.Location = new System.Drawing.Point(12, 101);
+            this.btnInforme.Location = new System.Drawing.Point(12, 70);
             this.btnInforme.Name = "btnInforme";
             this.btnInforme.Size = new System.Drawing.Size(93, 23);
-            this.btnInforme.TabIndex = 3;
+            this.btnInforme.TabIndex = 5;
             this.btnInforme.Text = "Informe";
             this.btnInforme.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnDosJugadores
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 14);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 110);
-            this.textBox1.TabIndex = 4;
+            this.btnDosJugadores.Location = new System.Drawing.Point(12, 41);
+            this.btnDosJugadores.Name = "btnDosJugadores";
+            this.btnDosJugadores.Size = new System.Drawing.Size(93, 23);
+            this.btnDosJugadores.TabIndex = 4;
+            this.btnDosJugadores.Text = "Dos jugadores";
+            this.btnDosJugadores.UseVisualStyleBackColor = true;
+            this.btnDosJugadores.Click += new System.EventHandler(this.btnDosJugadores_Click);
+            // 
+            // btnUnJugador
+            // 
+            this.btnUnJugador.Location = new System.Drawing.Point(12, 12);
+            this.btnUnJugador.Name = "btnUnJugador";
+            this.btnUnJugador.Size = new System.Drawing.Size(93, 23);
+            this.btnUnJugador.TabIndex = 3;
+            this.btnUnJugador.Text = "Un jugador";
+            this.btnUnJugador.UseVisualStyleBackColor = true;
+            this.btnUnJugador.Click += new System.EventHandler(this.btnUnJugador_Click);
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 148);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(397, 333);
             this.Controls.Add(this.btnInforme);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDosJugadores);
+            this.Controls.Add(this.btnUnJugador);
             this.Name = "MenuPrincipal";
             this.Text = "Menu principal";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnDosJugadores;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnInforme;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnDosJugadores;
+        private System.Windows.Forms.Button btnUnJugador;
     }
 }
-

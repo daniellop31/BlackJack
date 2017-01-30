@@ -16,5 +16,23 @@ namespace BlackJackGit
         {
             InitializeComponent();
         }
+
+        private void btnUnJugador_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            DatosDeJugadores formJ = new DatosDeJugadores();
+            formJ.txtNombreJ2.Text = "PC";
+            formJ.txtNombreJ2.Enabled = false;
+            int apuestaj2 = r.Next(0, 100000);
+            formJ.txtApuestaJ2.Text = apuestaj2.ToString("0,0");
+            formJ.txtApuestaJ2.Enabled = false;
+            formJ.Show();
+        }
+
+        private void btnDosJugadores_Click(object sender, EventArgs e)
+        {
+            DatosDeJugadores formJ = new DatosDeJugadores();
+            formJ.Show();
+        }
     }
 }
