@@ -25,7 +25,36 @@ namespace BlackJackGit
             nuevoTablero.txtApuestaJ1.Text = txtApuestaJ1.Text;
             nuevoTablero.txtApuestaJ2.Text = txtApuestaJ2.Text;
             nuevoTablero.Show();
-            Close();
+            Close();            
+        }
+
+        /// <summary>
+        /// Verifica que los campos estén llenados de manera correcta
+        /// </summary>
+        /// <returns>La validad de los campos</returns>
+        private bool validar()
+        {
+            
+        }
+
+        private void txtNombreJ1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarTexto(e);
+        }
+
+        private void txtApuestaJ1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarNumero(e);
+        }
+
+        private void txtNombreJ2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarTexto(e);
+        }
+
+        private void txtApuestaJ2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarNumero(e);
         }
     }
 }

@@ -26,16 +26,46 @@ namespace BlackJackGit
             }
         }
 
+        public int Valor
+        {
+            get
+            {
+                return valor;
+            }
+
+            set
+            {
+                valor = value;
+            }
+        }
+
+        public int Codigo
+        {
+            get
+            {
+                return codigo;
+            }
+
+            set
+            {
+                codigo = value;
+            }
+        }
+
+        /// <summary>
+        /// Crea una carta
+        /// </summary>
+        /// <param name="codigo">Identificador de la carta</param>
         public Carta(int codigo)
         {
-            this.codigo = codigo;
-            this.Nombre = Procesos.codigoCartas[codigo];
+            Codigo = codigo;
+            Nombre = Procesos.CodigoCartas[codigo];
             if (codigo == 0)
-                valor = 11;
+                Valor = 11;
             else if (codigo >= 1 && codigo <= 9)
-                valor = codigo;
+                Valor = codigo;
             else
-                valor = 10;
+                Valor = 10;
         }
     }
 }

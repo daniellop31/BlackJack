@@ -19,6 +19,7 @@ namespace BlackJackGit
 
         private void btnUnJugador_Click(object sender, EventArgs e)
         {
+            Program.TipoJuego = Program.UN_JUGADOR;
             Random r = new Random();
             DatosDeJugadores formJ = new DatosDeJugadores();
             formJ.txtNombreJ2.Text = "PC";
@@ -31,6 +32,7 @@ namespace BlackJackGit
 
         private void btnDosJugadores_Click(object sender, EventArgs e)
         {
+            Program.TipoJuego = Program.DOS_JUGADORES;
             DatosDeJugadores formJ = new DatosDeJugadores();
             formJ.Show();
         }

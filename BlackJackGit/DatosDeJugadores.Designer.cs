@@ -83,6 +83,7 @@
             this.txtApuestaJ2.Name = "txtApuestaJ2";
             this.txtApuestaJ2.Size = new System.Drawing.Size(96, 20);
             this.txtApuestaJ2.TabIndex = 17;
+            this.txtApuestaJ2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApuestaJ2_KeyPress);
             // 
             // txtApuestaJ1
             // 
@@ -90,6 +91,7 @@
             this.txtApuestaJ1.Name = "txtApuestaJ1";
             this.txtApuestaJ1.Size = new System.Drawing.Size(96, 20);
             this.txtApuestaJ1.TabIndex = 16;
+            this.txtApuestaJ1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApuestaJ1_KeyPress);
             // 
             // btnHecho
             // 
@@ -116,6 +118,7 @@
             this.txtNombreJ2.Name = "txtNombreJ2";
             this.txtNombreJ2.Size = new System.Drawing.Size(134, 20);
             this.txtNombreJ2.TabIndex = 13;
+            this.txtNombreJ2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreJ2_KeyPress);
             // 
             // txtNombreJ1
             // 
@@ -123,6 +126,7 @@
             this.txtNombreJ1.Name = "txtNombreJ1";
             this.txtNombreJ1.Size = new System.Drawing.Size(134, 20);
             this.txtNombreJ1.TabIndex = 12;
+            this.txtNombreJ1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreJ1_KeyPress);
             // 
             // label1
             // 
@@ -149,6 +153,9 @@
             this.Controls.Add(this.txtNombreJ2);
             this.Controls.Add(this.txtNombreJ1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(313, 194);
+            this.MinimumSize = new System.Drawing.Size(313, 194);
             this.Name = "DatosDeJugadores";
             this.Text = "Datos de los jugadores";
             this.ResumeLayout(false);
