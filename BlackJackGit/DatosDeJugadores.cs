@@ -32,10 +32,18 @@ namespace BlackJackGit
                 //por ultimo se abre un formulario de tablero
 
                 Tablero nuevoTablero = new Tablero();
+                //ESTA SECCION EDITA LOS CAMPOES VISIBLES
                 nuevoTablero.gbOpcionesJ1.Text = txtNombreJ1.Text;
                 nuevoTablero.gbOpcionesJ2.Text = txtNombreJ2.Text;
                 nuevoTablero.txtApuestaJ1.Text = txtApuestaJ1.Text;
                 nuevoTablero.txtApuestaJ2.Text = txtApuestaJ2.Text;
+
+                //ESTA SECCIÓN EDITA LOS CAMPOES DE LOS OBJETOS JUGADOR
+                nuevoTablero.Jugador1 = new Jugador(txtNombreJ1.Text);
+                nuevoTablero.Jugador2 = new Jugador(txtNombreJ2.Text);
+                nuevoTablero.Jugador1.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
+                nuevoTablero.Jugador2.Apuesta = Convert.ToInt32(txtApuestaJ2.Text);
+
                 nuevoTablero.Show();
                 Close();
             }      
