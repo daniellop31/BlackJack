@@ -80,23 +80,32 @@ namespace BlackJackGit
         private Jugador jugadorGanador(Jugador j1, Jugador j2)
         {
             Jugador jugadorGanador = null;
+           
 
-            if (j1.contarPuntaje(j1.Cartas) >= 21)
+            if ((Procesos.contarPuntaje(j1.Cartas)) > 21 && (Procesos.contarPuntaje(j2.Cartas) <= 21))
             {
                 jugadorGanador = j2;
             }
             else
             {
-                if (j2.contarPuntaje(j2.Cartas) >= 21)
+                if (Procesos.contarPuntaje(j2.Cartas) > 21 && Procesos.contarPuntaje(j1.Cartas) <=21)
                 {
                     jugadorGanador = j1;
                 }
                 else
                 {
-                    if(j1.contarPuntaje(j1.Cartas) == j2.contarPuntaje(j2.Cartas))
+                    if ((Procesos.contarPuntaje(j1.Cartas) == Procesos.contarPuntaje(j2.Cartas)) || (Procesos.contarPuntaje(j2.Cartas) == Procesos.contarPuntaje(j1.Cartas)))
                     {
                         jugadorGanador = null;
                     }
+                    else
+                    {
+                        if ((Procesos.contarPuntaje(j1.Cartas) > 21) && (Procesos.contarPuntaje(j2.Cartas) > 21))
+                        {
+                            jugadorGanador = null;
+                        }
+                    }
+                        
                 }
             }
             return jugadorGanador;
@@ -114,6 +123,7 @@ namespace BlackJackGit
                 nuevo.Image = Jugador1.Cartas.ElementAt(i).Imagen;
                 nuevo.Visible = true;
                 Controls.Add(nuevo);
+                nuevo.BringToFront();
             }
         }
 
@@ -128,6 +138,22 @@ namespace BlackJackGit
                 nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;
                 nuevo.Visible = true;
                 Controls.Add(nuevo);
+            }
+            if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) && (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
+            {
+                btnPasarJ1.Enabled = false;
+                btnPedirCartaJ1.Enabled = false;
+                btnPasarJ2.Enabled = false;
+                btnPedirCartaJ2.Enabled = false;
+
+                if (jugadorGanador(Jugador1, Jugador2) != null)
+                {
+                    MessageBox.Show("El jugador ganador es " + jugadorGanador(Jugador1, Jugador2).Nombre, "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    MessageBox.Show("Hay un empate entre ambos jugadores", "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
     }

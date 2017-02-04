@@ -74,14 +74,6 @@ namespace BlackJackGit
             this.Nombre = nombre;
         }
 
-        public int contarPuntaje(List<Carta> cartas)
-        {
-            int totalPuntos = 0;
-            foreach(Carta c in cartas)
-            {
-                totalPuntos += c.Valor;
-            }
-            return totalPuntos;
-        }
+        
     }
 }

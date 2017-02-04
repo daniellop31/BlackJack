@@ -74,6 +74,16 @@ namespace BlackJackGit
             Random r = new Random();
             return new Carta(r.Next(13));
         }
+
+        public static int contarPuntaje(List<Carta> cartas)
+        {
+            int totalPuntos = 0;
+            foreach (Carta c in cartas)
+            {
+                totalPuntos += c.Valor;
+            }
+            return totalPuntos;
+        }
     }
 }
 
