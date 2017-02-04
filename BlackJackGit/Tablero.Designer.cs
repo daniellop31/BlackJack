@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tablero));
             this.gbOpcionesJ2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtApuestaJ2 = new System.Windows.Forms.TextBox();
@@ -146,15 +147,16 @@
             // 
             // imgCarta1J1
             // 
-            this.imgCarta1J1.Location = new System.Drawing.Point(12, 231);
+            this.imgCarta1J1.Image = ((System.Drawing.Image)(resources.GetObject("imgCarta1J1.Image")));
+            this.imgCarta1J1.Location = new System.Drawing.Point(7, 12);
             this.imgCarta1J1.Name = "imgCarta1J1";
-            this.imgCarta1J1.Size = new System.Drawing.Size(108, 155);
+            this.imgCarta1J1.Size = new System.Drawing.Size(225, 316);
             this.imgCarta1J1.TabIndex = 11;
             this.imgCarta1J1.TabStop = false;
             // 
             // imgCarta2J1
             // 
-            this.imgCarta2J1.Location = new System.Drawing.Point(127, 231);
+            this.imgCarta2J1.Location = new System.Drawing.Point(323, 183);
             this.imgCarta2J1.Name = "imgCarta2J1";
             this.imgCarta2J1.Size = new System.Drawing.Size(108, 155);
             this.imgCarta2J1.TabIndex = 12;
@@ -187,7 +189,6 @@
             this.Controls.Add(this.imgCarta1J1);
             this.Controls.Add(this.gbOpcionesJ2);
             this.Controls.Add(this.gbOpcionesJ1);
-            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(802, 555);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(802, 555);
