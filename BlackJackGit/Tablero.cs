@@ -125,8 +125,6 @@ namespace BlackJackGit
                 Controls.Add(nuevo);
                 nuevo.BringToFront();
             }
-
-
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
@@ -140,7 +138,7 @@ namespace BlackJackGit
                 nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;                                
                 Controls.Add(nuevo);                                
             }
-            if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) && (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
+            if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) || (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
             {
                 btnPasarJ1.Enabled = false;
                 btnPedirCartaJ1.Enabled = false;

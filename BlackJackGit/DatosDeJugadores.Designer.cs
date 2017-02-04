@@ -82,7 +82,7 @@
             this.txtApuestaJ2.Location = new System.Drawing.Point(135, 84);
             this.txtApuestaJ2.Name = "txtApuestaJ2";
             this.txtApuestaJ2.Size = new System.Drawing.Size(96, 20);
-            this.txtApuestaJ2.TabIndex = 17;
+            this.txtApuestaJ2.TabIndex = 18;
             this.txtApuestaJ2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApuestaJ2_KeyPress);
             // 
             // txtApuestaJ1
@@ -98,7 +98,7 @@
             this.btnHecho.Location = new System.Drawing.Point(12, 110);
             this.btnHecho.Name = "btnHecho";
             this.btnHecho.Size = new System.Drawing.Size(257, 23);
-            this.btnHecho.TabIndex = 15;
+            this.btnHecho.TabIndex = 20;
             this.btnHecho.Text = "Hecho";
             this.btnHecho.UseVisualStyleBackColor = true;
             this.btnHecho.Click += new System.EventHandler(this.btnHecho_Click);
@@ -117,7 +117,7 @@
             this.txtNombreJ2.Location = new System.Drawing.Point(135, 58);
             this.txtNombreJ2.Name = "txtNombreJ2";
             this.txtNombreJ2.Size = new System.Drawing.Size(134, 20);
-            this.txtNombreJ2.TabIndex = 13;
+            this.txtNombreJ2.TabIndex = 17;
             this.txtNombreJ2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreJ2_KeyPress);
             // 
             // txtNombreJ1
