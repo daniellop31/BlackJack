@@ -10,6 +10,15 @@ namespace BlackJackGit
 {
     class Carta 
     {
+        //CONSTANTES PARA LAS CARTAS
+        
+
+
+
+
+
+
+
         //ESTO ES UNA CARTA
         private string nombre;
         private int valor;

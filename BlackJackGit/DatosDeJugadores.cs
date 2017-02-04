@@ -44,6 +44,14 @@ namespace BlackJackGit
                 nuevoTablero.Jugador1.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
                 nuevoTablero.Jugador2.Apuesta = Convert.ToInt32(txtApuestaJ2.Text);
 
+                //DA LAS CARTAS INICIALES A LOS JUGADORES
+                nuevoTablero.Jugador1.Cartas.Add(Procesos.pedirCarta());
+                nuevoTablero.Jugador1.Cartas.Add(Procesos.pedirCarta());
+                nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
+                nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
+                
+
+
                 nuevoTablero.Show();
                 Close();
             }      

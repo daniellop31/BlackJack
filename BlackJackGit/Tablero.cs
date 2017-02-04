@@ -59,6 +59,7 @@ namespace BlackJackGit
         private void btnPedirCartaJ1_Click(object sender, EventArgs e)
         {
             Jugador1.Cartas.Add(Procesos.pedirCarta());
+
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
