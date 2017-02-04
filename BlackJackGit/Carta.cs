@@ -11,7 +11,20 @@ namespace BlackJackGit
     class Carta 
     {
         //CONSTANTES PARA LAS CARTAS
-        
+        public static Image A;
+        public static Image UNO;
+        public static Image DOS;
+        public static Image TRES;
+        public static Image CUATRO;
+        public static Image CINCO;
+        public static Image SEIS;
+        public static Image SIETE;
+        public static Image OCHO;
+        public static Image NUEVE;
+        public static Image J;
+        public static Image Q;
+        public static Image K;
+
 
 
 

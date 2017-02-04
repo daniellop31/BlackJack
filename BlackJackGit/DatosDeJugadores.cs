@@ -50,6 +50,7 @@ namespace BlackJackGit
                 nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
                 nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
                 
+                 
 
 
                 nuevoTablero.Show();
