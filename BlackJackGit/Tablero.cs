@@ -114,7 +114,10 @@ namespace BlackJackGit
                 nuevo.Image = Jugador1.Cartas.ElementAt(i).Imagen;
                 nuevo.Visible = true;
                 Controls.Add(nuevo);
+                nuevo.BringToFront();
             }
+
+
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
@@ -125,9 +128,8 @@ namespace BlackJackGit
                 PictureBox nuevo = new PictureBox();
                 nuevo.Location = new Point(X_POSICION_J2 - (i - 2) * ESPACIO_NUMERO, Y_POSICION_J2);
                 nuevo.Size = new Size(ANCHO_CARTA, ALTURA_CARTA);
-                nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;
-                nuevo.Visible = true;
-                Controls.Add(nuevo);
+                nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;                                
+                Controls.Add(nuevo);                                
             }
         }
     }
