@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace BlackJackGit
 {
@@ -51,11 +52,7 @@ namespace BlackJackGit
         /// </summary>
         /// <param name="e">Un evento KeyPress de un textbox</param>
         public static void validarTexto(KeyPressEventArgs e)
-        {/*
-            if (Char.IsLetter(e.KeyChar) || Char.IsWhiteSpace(e.KeyChar) || Char.IsControl(e.KeyChar))
-                e.Handled = false;
-            else
-                e.Handled = true;*/
+        {
             e.Handled = !(Char.IsLetter(e.KeyChar) || Char.IsWhiteSpace(e.KeyChar) || Char.IsControl(e.KeyChar));
         }
 
@@ -64,12 +61,19 @@ namespace BlackJackGit
         /// </summary>
         /// <param name="e">Evento de KeyPress de un textobox</param>
         public static void validarNumero(KeyPressEventArgs e)
-        {/*
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
-                e.Handled = false;
-            else
-                e.Handled = true;*/
+        {
             e.Handled = !(Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar));
+        }
+
+        /// <summary>
+        /// Crea una carta con un código aleatorio y la retorna
+        /// </summary>
+        /// <returns>Carta creada</returns>
+        public static Carta pedirCarta()
+        {
+            Random r = new Random();
+            return new Carta(r.Next(13));
+
         }
     }
 }

@@ -88,6 +88,7 @@
             this.btnPedirCartaJ2.TabIndex = 1;
             this.btnPedirCartaJ2.Text = "Pedir una carta";
             this.btnPedirCartaJ2.UseVisualStyleBackColor = true;
+            this.btnPedirCartaJ2.Click += new System.EventHandler(this.btnPedirCartaJ2_Click);
             // 
             // btnPasarJ2
             // 
@@ -135,6 +136,7 @@
             this.btnPedirCartaJ1.TabIndex = 1;
             this.btnPedirCartaJ1.Text = "Pedir una carta";
             this.btnPedirCartaJ1.UseVisualStyleBackColor = true;
+            this.btnPedirCartaJ1.Click += new System.EventHandler(this.btnPedirCartaJ1_Click);
             // 
             // btnPasarJ1
             // 
