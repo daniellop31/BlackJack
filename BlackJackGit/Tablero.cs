@@ -40,7 +40,7 @@ namespace BlackJackGit
         /// <summary>
         /// Espacio que hay entre cartas superpuestas
         /// </summary>
-        private const int ESPACIO_NUMERO = 15;
+        private const int ESPACIO_NUMERO = 20;
 
         //INSTANCIAS DE JUGADOR, ESTOS SON LOS ENTES QUE INTERACTUAN
         private Jugador J1;
@@ -81,6 +81,29 @@ namespace BlackJackGit
         private void btnPedirCartaJ1_Click(object sender, EventArgs e)
         {
             Jugador1.Cartas.Add(Procesos.pedirCarta());
+            for(int i = 2; i< Jugador1.Cartas.Count; i++)
+            {
+                PictureBox nuevo = new PictureBox();
+                nuevo.Location = new Point(X_POSICION_J1+(i-2)*ESPACIO_NUMERO, Y_POSICION_J1);
+                nuevo.Size = new Size(ANCHO_CARTA, ALTURA_CARTA);
+                nuevo.Image = Jugador1.Cartas.ElementAt(i).Imagen;
+                nuevo.Visible = true;
+                Controls.Add(nuevo);
+            }
+        }
+
+        private void btnPedirCartaJ2_Click(object sender, EventArgs e)
+        {
+            Jugador2.Cartas.Add(Procesos.pedirCarta());
+            for (int i = 2; i < Jugador2.Cartas.Count; i++)
+            {
+                PictureBox nuevo = new PictureBox();
+                nuevo.Location = new Point(X_POSICION_J2 - (i - 2) * ESPACIO_NUMERO, Y_POSICION_J2);
+                nuevo.Size = new Size(ANCHO_CARTA, ALTURA_CARTA);
+                nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;
+                nuevo.Visible = true;
+                Controls.Add(nuevo);
+            }
         }
     }
 }
