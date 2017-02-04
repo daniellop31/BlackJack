@@ -27,7 +27,7 @@ namespace BlackJackGit
             formJ.txtNombreJ2.Text = "PC";
             formJ.txtNombreJ2.Enabled = false;
             int apuestaj2 = r.Next(0, 100000);
-            formJ.txtApuestaJ2.Text = apuestaj2.ToString("0,0");
+            formJ.txtApuestaJ2.Text = apuestaj2.ToString();
             formJ.txtApuestaJ2.Enabled = false;
             formJ.Show();
         }
