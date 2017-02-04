@@ -57,8 +57,11 @@ namespace BlackJackGit
                 nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
                 nuevoTablero.imgCarta1J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(0).Imagen;
                 nuevoTablero.imgCarta2J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(1).Imagen;
+                nuevoTablero.lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(nuevoTablero.Jugador1.Cartas));
                 nuevoTablero.imgCarta1J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(0).Imagen;
                 nuevoTablero.imgCarta2J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(1).Imagen;
+                nuevoTablero.lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(nuevoTablero.Jugador2.Cartas));
+                
                 
                 nuevoTablero.Show();
                 Close();
