@@ -87,7 +87,6 @@
             this.btnPedirCartaJ2.TabIndex = 1;
             this.btnPedirCartaJ2.Text = "Pedir una carta";
             this.btnPedirCartaJ2.UseVisualStyleBackColor = true;
-            this.btnPedirCartaJ2.Click += new System.EventHandler(this.btnPedirCartaJ2_Click);
             // 
             // btnPasarJ2
             // 
