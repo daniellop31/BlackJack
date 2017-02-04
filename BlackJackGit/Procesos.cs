@@ -73,7 +73,6 @@ namespace BlackJackGit
         {
             Random r = new Random();
             return new Carta(r.Next(13));
-
         }
     }
 }
