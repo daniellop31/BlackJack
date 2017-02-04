@@ -42,6 +42,8 @@
             this.imgCarta2J2 = new System.Windows.Forms.PictureBox();
             this.imgCarta2J1 = new System.Windows.Forms.PictureBox();
             this.imgCarta1J1 = new System.Windows.Forms.PictureBox();
+            this.lbPuntageJ1 = new System.Windows.Forms.Label();
+            this.lbPuntageJ2 = new System.Windows.Forms.Label();
             this.gbOpcionesJ2.SuspendLayout();
             this.gbOpcionesJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J2)).BeginInit();
@@ -52,13 +54,14 @@
             // 
             // gbOpcionesJ2
             // 
+            this.gbOpcionesJ2.Controls.Add(this.lbPuntageJ2);
             this.gbOpcionesJ2.Controls.Add(this.label1);
             this.gbOpcionesJ2.Controls.Add(this.txtApuestaJ2);
             this.gbOpcionesJ2.Controls.Add(this.btnPedirCartaJ2);
             this.gbOpcionesJ2.Controls.Add(this.btnPasarJ2);
-            this.gbOpcionesJ2.Location = new System.Drawing.Point(639, 392);
+            this.gbOpcionesJ2.Location = new System.Drawing.Point(552, 392);
             this.gbOpcionesJ2.Name = "gbOpcionesJ2";
-            this.gbOpcionesJ2.Size = new System.Drawing.Size(135, 112);
+            this.gbOpcionesJ2.Size = new System.Drawing.Size(222, 112);
             this.gbOpcionesJ2.TabIndex = 9;
             this.gbOpcionesJ2.TabStop = false;
             // 
@@ -100,13 +103,14 @@
             // 
             // gbOpcionesJ1
             // 
+            this.gbOpcionesJ1.Controls.Add(this.lbPuntageJ1);
             this.gbOpcionesJ1.Controls.Add(this.label6);
             this.gbOpcionesJ1.Controls.Add(this.txtApuestaJ1);
             this.gbOpcionesJ1.Controls.Add(this.btnPedirCartaJ1);
             this.gbOpcionesJ1.Controls.Add(this.btnPasarJ1);
             this.gbOpcionesJ1.Location = new System.Drawing.Point(12, 392);
             this.gbOpcionesJ1.Name = "gbOpcionesJ1";
-            this.gbOpcionesJ1.Size = new System.Drawing.Size(146, 112);
+            this.gbOpcionesJ1.Size = new System.Drawing.Size(228, 112);
             this.gbOpcionesJ1.TabIndex = 8;
             this.gbOpcionesJ1.TabStop = false;
             // 
@@ -178,6 +182,24 @@
             this.imgCarta1J1.TabIndex = 11;
             this.imgCarta1J1.TabStop = false;
             // 
+            // lbPuntageJ1
+            // 
+            this.lbPuntageJ1.AutoSize = true;
+            this.lbPuntageJ1.Location = new System.Drawing.Point(131, 80);
+            this.lbPuntageJ1.Name = "lbPuntageJ1";
+            this.lbPuntageJ1.Size = new System.Drawing.Size(46, 13);
+            this.lbPuntageJ1.TabIndex = 12;
+            this.lbPuntageJ1.Text = "Puntaje:";
+            // 
+            // lbPuntageJ2
+            // 
+            this.lbPuntageJ2.AutoSize = true;
+            this.lbPuntageJ2.Location = new System.Drawing.Point(131, 80);
+            this.lbPuntageJ2.Name = "lbPuntageJ2";
+            this.lbPuntageJ2.Size = new System.Drawing.Size(46, 13);
+            this.lbPuntageJ2.TabIndex = 13;
+            this.lbPuntageJ2.Text = "Puntaje:";
+            // 
             // Tablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,5 +243,7 @@
         public System.Windows.Forms.PictureBox imgCarta2J1;
         public System.Windows.Forms.PictureBox imgCarta2J2;
         public System.Windows.Forms.PictureBox imgCarta1J2;
+        public System.Windows.Forms.Label lbPuntageJ2;
+        public System.Windows.Forms.Label lbPuntageJ1;
     }
 }

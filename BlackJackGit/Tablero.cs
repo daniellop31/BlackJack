@@ -77,11 +77,26 @@ namespace BlackJackGit
             InitializeComponent();
         }
 
+        /// <summary>
+        /// El metodo determina el jugador ganador
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
         private Jugador jugadorGanador(Jugador j1, Jugador j2)
         {
             Jugador jugadorGanador = null;
            
-
+            if(Procesos.contarPuntaje(j1.Cartas) > 21)
+            {
+                jugadorGanador = j2;
+            }
+            else if (Procesos.contarPuntaje(j2.Cartas) > 21)
+            {
+                jugadorGanador = j1;
+            }
+             
+            /*
             if ((Procesos.contarPuntaje(j1.Cartas)) > 21 && (Procesos.contarPuntaje(j2.Cartas) <= 21))
             {
                 jugadorGanador = j2;
@@ -104,10 +119,10 @@ namespace BlackJackGit
                         {
                             jugadorGanador = null;
                         }
-                    }
-                        
+                    }      
                 }
             }
+            */
             return jugadorGanador;
         }
 
@@ -124,6 +139,7 @@ namespace BlackJackGit
                 nuevo.Visible = true;
                 Controls.Add(nuevo);
                 nuevo.BringToFront();
+                lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador1.Cartas));
             }
         }
 
@@ -135,8 +151,10 @@ namespace BlackJackGit
                 PictureBox nuevo = new PictureBox();
                 nuevo.Location = new Point(X_POSICION_J2 - (i - 2) * ESPACIO_NUMERO, Y_POSICION_J2);
                 nuevo.Size = new Size(ANCHO_CARTA, ALTURA_CARTA);
-                nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;                                
-                Controls.Add(nuevo);                                
+                nuevo.Image = Jugador2.Cartas.ElementAt(i).Imagen;
+                nuevo.Visible = true;
+                Controls.Add(nuevo);
+                lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador2.Cartas));
             }
             if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) || (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
             {
@@ -145,13 +163,20 @@ namespace BlackJackGit
                 btnPasarJ2.Enabled = false;
                 btnPedirCartaJ2.Enabled = false;
 
+                DialogResult resultado;
+
                 if (jugadorGanador(Jugador1, Jugador2) != null)
                 {
-                    MessageBox.Show("El jugador ganador es " + jugadorGanador(Jugador1, Jugador2).Nombre, "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    resultado = MessageBox.Show("El jugador ganador es " + jugadorGanador(Jugador1, Jugador2).Nombre + "\nComenzar un juego nuevo ?", "Fin del juego", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    MessageBox.Show("Hay un empate entre ambos jugadores", "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    resultado = MessageBox.Show("Hay un empate entre ambos jugadores \nComenzar un juego nuevo ?", "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                if(resultado == DialogResult.Yes)
+                {
+                    Close();
                 }
             }
         }
