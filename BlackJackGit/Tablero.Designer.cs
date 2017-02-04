@@ -38,16 +38,16 @@
             this.txtApuestaJ1 = new System.Windows.Forms.TextBox();
             this.btnPedirCartaJ1 = new System.Windows.Forms.Button();
             this.btnPasarJ1 = new System.Windows.Forms.Button();
-            this.imgCarta1J1 = new System.Windows.Forms.PictureBox();
-            this.imgCarta2J1 = new System.Windows.Forms.PictureBox();
-            this.imgCarta2J2 = new System.Windows.Forms.PictureBox();
             this.imgCarta1J2 = new System.Windows.Forms.PictureBox();
+            this.imgCarta2J2 = new System.Windows.Forms.PictureBox();
+            this.imgCarta2J1 = new System.Windows.Forms.PictureBox();
+            this.imgCarta1J1 = new System.Windows.Forms.PictureBox();
             this.gbOpcionesJ2.SuspendLayout();
             this.gbOpcionesJ1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbOpcionesJ2
@@ -145,21 +145,13 @@
             this.btnPasarJ1.Text = "Pasar";
             this.btnPasarJ1.UseVisualStyleBackColor = true;
             // 
-            // imgCarta1J1
+            // imgCarta1J2
             // 
-            this.imgCarta1J1.Location = new System.Drawing.Point(18, 231);
-            this.imgCarta1J1.Name = "imgCarta1J1";
-            this.imgCarta1J1.Size = new System.Drawing.Size(108, 155);
-            this.imgCarta1J1.TabIndex = 11;
-            this.imgCarta1J1.TabStop = false;
-            // 
-            // imgCarta2J1
-            // 
-            this.imgCarta2J1.Location = new System.Drawing.Point(132, 231);
-            this.imgCarta2J1.Name = "imgCarta2J1";
-            this.imgCarta2J1.Size = new System.Drawing.Size(108, 155);
-            this.imgCarta2J1.TabIndex = 12;
-            this.imgCarta2J1.TabStop = false;
+            this.imgCarta1J2.Location = new System.Drawing.Point(552, 231);
+            this.imgCarta1J2.Name = "imgCarta1J2";
+            this.imgCarta1J2.Size = new System.Drawing.Size(108, 155);
+            this.imgCarta1J2.TabIndex = 14;
+            this.imgCarta1J2.TabStop = false;
             // 
             // imgCarta2J2
             // 
@@ -169,13 +161,21 @@
             this.imgCarta2J2.TabIndex = 13;
             this.imgCarta2J2.TabStop = false;
             // 
-            // imgCarta1J2
+            // imgCarta2J1
             // 
-            this.imgCarta1J2.Location = new System.Drawing.Point(552, 231);
-            this.imgCarta1J2.Name = "imgCarta1J2";
-            this.imgCarta1J2.Size = new System.Drawing.Size(108, 155);
-            this.imgCarta1J2.TabIndex = 14;
-            this.imgCarta1J2.TabStop = false;
+            this.imgCarta2J1.Location = new System.Drawing.Point(132, 231);
+            this.imgCarta2J1.Name = "imgCarta2J1";
+            this.imgCarta2J1.Size = new System.Drawing.Size(108, 155);
+            this.imgCarta2J1.TabIndex = 12;
+            this.imgCarta2J1.TabStop = false;
+            // 
+            // imgCarta1J1
+            // 
+            this.imgCarta1J1.Location = new System.Drawing.Point(18, 231);
+            this.imgCarta1J1.Name = "imgCarta1J1";
+            this.imgCarta1J1.Size = new System.Drawing.Size(108, 155);
+            this.imgCarta1J1.TabIndex = 11;
+            this.imgCarta1J1.TabStop = false;
             // 
             // Tablero
             // 
@@ -197,10 +197,10 @@
             this.gbOpcionesJ2.PerformLayout();
             this.gbOpcionesJ1.ResumeLayout(false);
             this.gbOpcionesJ1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -216,9 +216,9 @@
         public System.Windows.Forms.TextBox txtApuestaJ1;
         private System.Windows.Forms.Button btnPedirCartaJ1;
         private System.Windows.Forms.Button btnPasarJ1;
-        private System.Windows.Forms.PictureBox imgCarta1J1;
-        private System.Windows.Forms.PictureBox imgCarta2J1;
-        private System.Windows.Forms.PictureBox imgCarta2J2;
-        private System.Windows.Forms.PictureBox imgCarta1J2;
+        public System.Windows.Forms.PictureBox imgCarta1J1;
+        public System.Windows.Forms.PictureBox imgCarta2J1;
+        public System.Windows.Forms.PictureBox imgCarta2J2;
+        public System.Windows.Forms.PictureBox imgCarta1J2;
     }
 }
