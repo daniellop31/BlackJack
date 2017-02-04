@@ -141,6 +141,8 @@ namespace BlackJackGit
                 nuevo.BringToFront();
                 lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador1.Cartas));
             }
+
+
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
