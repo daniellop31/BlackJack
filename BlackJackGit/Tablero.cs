@@ -77,6 +77,31 @@ namespace BlackJackGit
             InitializeComponent();
         }
 
+        private Jugador jugadorGanador(Jugador j1, Jugador j2)
+        {
+            Jugador jugadorGanador = null;
+
+            if (j1.contarPuntaje(j1.Cartas) >= 21)
+            {
+                jugadorGanador = j2;
+            }
+            else
+            {
+                if (j2.contarPuntaje(j2.Cartas) >= 21)
+                {
+                    jugadorGanador = j1;
+                }
+                else
+                {
+                    if(j1.contarPuntaje(j1.Cartas) == j2.contarPuntaje(j2.Cartas))
+                    {
+                        jugadorGanador = null;
+                    }
+                }
+            }
+            return jugadorGanador;
+        }
+
         //TODO: Terminar los siguientes métodos, organizar los jugadores para que se instacien y poder manipularlos
         private void btnPedirCartaJ1_Click(object sender, EventArgs e)
         {
