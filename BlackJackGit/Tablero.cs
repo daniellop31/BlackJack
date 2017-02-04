@@ -141,8 +141,6 @@ namespace BlackJackGit
                 nuevo.BringToFront();
                 lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador1.Cartas));
             }
-
-
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
@@ -160,7 +158,6 @@ namespace BlackJackGit
                 Controls.Add(nuevo);
                 lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador2.Cartas));
             }
-
             if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) || (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
             {
                 btnPasarJ1.Enabled = false;

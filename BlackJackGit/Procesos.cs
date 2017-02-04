@@ -75,6 +75,11 @@ namespace BlackJackGit
             return new Carta(r.Next(13));
         }
 
+        /// <summary>
+        /// Cuenta los puntos que hay en un arreglo de cartas
+        /// </summary>
+        /// <param name="cartas">Arreglo de cartas para contra el puntaje</param>
+        /// <returns>Puntaje del arreglo de cartas</returns>
         public static int contarPuntaje(List<Carta> cartas)
         {
             int totalPuntos = 0;

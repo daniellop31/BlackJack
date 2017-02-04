@@ -49,6 +49,8 @@ namespace BlackJackGit
                 nuevoTablero.Jugador2 = new Jugador(txtNombreJ2.Text);
                 nuevoTablero.Jugador1.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
                 nuevoTablero.Jugador2.Apuesta = Convert.ToInt32(txtApuestaJ2.Text);
+                nuevoTablero.Jugador1.DineroTotal -= Convert.ToInt32(txtApuestaJ1.Text);
+                nuevoTablero.Jugador2.DineroTotal -= Convert.ToInt32(txtApuestaJ2.Text);
 
                 //DA LAS CARTAS INICIALES A LOS JUGADORES
                 nuevoTablero.Jugador1.Cartas.Add(Procesos.pedirCarta());
@@ -89,6 +91,10 @@ namespace BlackJackGit
             {
                 MessageBox.Show("El jugador #1 no ha definido su apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (Convert.ToInt32(txtApuestaJ1) > 500000)
+            {
+                MessageBox.Show("El jugador no tiene suficiente dinero para esa apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 apuestaJ1Listo = true;
@@ -106,6 +112,10 @@ namespace BlackJackGit
             if (txtApuestaJ2.Text == "")
             {
                 MessageBox.Show("El jugador #2 no ha definido su apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Convert.ToInt32(txtApuestaJ2) > 500000)
+            {
+                MessageBox.Show("El jugador no tiene suficiente dinero para esa apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
