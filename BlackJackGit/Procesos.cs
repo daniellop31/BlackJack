@@ -89,6 +89,24 @@ namespace BlackJackGit
             }
             return totalPuntos;
         }
+
+        /// <summary>
+        /// Da las cartas iniciales a los jugadores
+        /// </summary>
+        /// <param name="nuevoTablero">Tablero en el que se ejecuta la acción</param>
+        public static void cartasIniciales(Tablero nuevoTablero)
+        {
+            nuevoTablero.Jugador1.Cartas.Add(pedirCarta());
+            nuevoTablero.Jugador1.Cartas.Add(pedirCarta());
+            nuevoTablero.Jugador2.Cartas.Add(pedirCarta());
+            nuevoTablero.Jugador2.Cartas.Add(pedirCarta());
+            nuevoTablero.imgCarta1J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(0).Imagen;
+            nuevoTablero.imgCarta2J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(1).Imagen;
+            nuevoTablero.lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador1.Cartas));
+            nuevoTablero.imgCarta1J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(0).Imagen;
+            nuevoTablero.imgCarta2J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(1).Imagen;
+            nuevoTablero.lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador2.Cartas));
+        }
     }
 }
 

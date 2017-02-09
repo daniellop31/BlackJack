@@ -53,16 +53,7 @@ namespace BlackJackGit
                 nuevoTablero.Jugador2.DineroTotal -= Convert.ToInt32(txtApuestaJ2.Text);
 
                 //DA LAS CARTAS INICIALES A LOS JUGADORES
-                nuevoTablero.Jugador1.Cartas.Add(Procesos.pedirCarta());
-                nuevoTablero.Jugador1.Cartas.Add(Procesos.pedirCarta());
-                nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
-                nuevoTablero.Jugador2.Cartas.Add(Procesos.pedirCarta());
-                nuevoTablero.imgCarta1J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(0).Imagen;
-                nuevoTablero.imgCarta2J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(1).Imagen;
-                nuevoTablero.lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(nuevoTablero.Jugador1.Cartas));
-                nuevoTablero.imgCarta1J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(0).Imagen;
-                nuevoTablero.imgCarta2J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(1).Imagen;
-                nuevoTablero.lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(nuevoTablero.Jugador2.Cartas));
+                Procesos.cartasIniciales(nuevoTablero);
                 
                 
                 nuevoTablero.Show();
@@ -91,10 +82,11 @@ namespace BlackJackGit
             {
                 MessageBox.Show("El jugador #1 no ha definido su apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Convert.ToInt32(txtApuestaJ1) > 500000)
+            else if (Convert.ToInt32(txtApuestaJ1.Text) > 100000)
             {
-                MessageBox.Show("El jugador no tiene suficiente dinero para esa apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La apuesta máxima es de $100.000", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             else
             {
                 apuestaJ1Listo = true;
@@ -113,10 +105,11 @@ namespace BlackJackGit
             {
                 MessageBox.Show("El jugador #2 no ha definido su apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Convert.ToInt32(txtApuestaJ2) > 500000)
+            else if (Convert.ToInt32(txtApuestaJ2.Text) > 100000)
             {
-                MessageBox.Show("El jugador no tiene suficiente dinero para esa apuesta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La apuesta máxima es de $100.000", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             else
             {
                 apuestaJ2Listo = true;

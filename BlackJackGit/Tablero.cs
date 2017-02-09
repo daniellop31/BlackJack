@@ -80,9 +80,9 @@ namespace BlackJackGit
         /// <summary>
         /// El metodo determina el jugador ganador
         /// </summary>
-        /// <param name="j1"></param>
-        /// <param name="j2"></param>
-        /// <returns></returns>
+        /// <param name="j1">Primer jugador a comparar</param>
+        /// <param name="j2">Segundo jugador a comparar</param>
+        /// <returns>El jugador ganador</returns>
         private Jugador jugadorGanador(Jugador j1, Jugador j2)
         {
             Jugador jugadorGanador = null;
@@ -126,7 +126,6 @@ namespace BlackJackGit
             return jugadorGanador;
         }
 
-        //TODO: Terminar los siguientes métodos, organizar los jugadores para que se instacien y poder manipularlos
         private void btnPedirCartaJ1_Click(object sender, EventArgs e)
         {
             Jugador1.Cartas.Add(Procesos.pedirCarta());
@@ -141,6 +140,10 @@ namespace BlackJackGit
                 nuevo.BringToFront();
                 lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador1.Cartas));
             }
+            btnPasarJ2.Enabled = true;
+            btnPedirCartaJ2.Enabled = true;
+            btnPasarJ1.Enabled = false;
+            btnPedirCartaJ1.Enabled = false;
         }
 
         private void btnPedirCartaJ2_Click(object sender, EventArgs e)
@@ -158,6 +161,18 @@ namespace BlackJackGit
                 Controls.Add(nuevo);
                 lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(Procesos.contarPuntaje(Jugador2.Cartas));
             }
+            btnPasarJ2.Enabled = false;
+            btnPedirCartaJ2.Enabled = false;
+            btnPasarJ1.Enabled = true;
+            btnPedirCartaJ1.Enabled = true;
+            finJuego();
+        }
+
+        /// <summary>
+        /// Condiciones para que el juego finalice
+        /// </summary>
+        public void finJuego()
+        {
             if ((Procesos.contarPuntaje(Jugador1.Cartas) >= 21) || (Procesos.contarPuntaje(Jugador2.Cartas) >= 21))
             {
                 btnPasarJ1.Enabled = false;
@@ -173,14 +188,87 @@ namespace BlackJackGit
                 }
                 else
                 {
-                    resultado = MessageBox.Show("Hay un empate entre ambos jugadores \nComenzar un juego nuevo ?", "Fin del juego", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    resultado = MessageBox.Show("Hay un empate entre ambos jugadores \nComenzar un juego nuevo ?", "Fin del juego", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 }
 
-                if(resultado == DialogResult.Yes)
+                if (resultado == DialogResult.No)
                 {
                     Close();
                 }
+                else
+                {
+                    limpiarTablero();
+                }
             }
+        }
+
+        /// <summary>
+        /// Inici
+        /// </summary>
+        public void limpiarTablero()
+        {
+            Controls.Clear();
+            Jugador1.Cartas.Clear();
+            Jugador2.Cartas.Clear();
+            InitializeComponent();
+            btnApostarJ1.Enabled = true;
+            btnApostarJ2.Enabled = false;
+            btnPasarJ1.Enabled = false;
+            btnPasarJ2.Enabled = false;
+            btnPedirCartaJ1.Enabled = false;
+            btnPedirCartaJ2.Enabled = false;
+            txtApuestaJ1.Enabled = true;
+            txtApuestaJ2.Enabled = true;
+        }
+
+        private void btnApostarJ1_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(txtApuestaJ1.Text)<=100000 && txtApuestaJ1.Text != "")
+            {
+                btnApostarJ2.Enabled = true;
+                btnApostarJ1.Enabled = false;
+                txtApuestaJ1.Enabled = false;
+                Jugador1.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
+                Jugador1.DineroTotal -= Convert.ToInt32(txtApuestaJ1.Text);
+
+            }
+        }
+
+        private void btnApostarJ2_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtApuestaJ2.Text) <= 100000 && txtApuestaJ2.Text != "")
+            {
+                btnApostarJ2.Enabled = false;
+                txtApuestaJ2.Enabled = false;
+                Jugador2.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
+                Jugador2.DineroTotal -= Convert.ToInt32(txtApuestaJ2.Text);
+                Procesos.cartasIniciales(this);
+
+                btnPasarJ1.Enabled = true;
+                btnPasarJ2.Enabled = true;
+                btnPedirCartaJ1.Enabled = true;
+                btnPedirCartaJ2.Enabled = true;
+            }
+        }
+
+        private void txtApuestaJ1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarNumero(e);
+        }
+
+        private void txtApuestaJ2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Procesos.validarNumero(e);
+        }
+
+        private void btnPasarJ1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPasarJ2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
