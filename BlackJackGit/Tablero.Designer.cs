@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbOpcionesJ2 = new System.Windows.Forms.GroupBox();
+            this.lbDineroJ2 = new System.Windows.Forms.Label();
             this.btnApostarJ2 = new System.Windows.Forms.Button();
             this.lbPuntageJ2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.btnPasarJ2 = new System.Windows.Forms.Button();
             this.gbOpcionesJ1 = new System.Windows.Forms.GroupBox();
             this.btnApostarJ1 = new System.Windows.Forms.Button();
+            this.lbDineroJ1 = new System.Windows.Forms.Label();
             this.lbPuntageJ1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtApuestaJ1 = new System.Windows.Forms.TextBox();
@@ -56,6 +58,7 @@
             // 
             // gbOpcionesJ2
             // 
+            this.gbOpcionesJ2.Controls.Add(this.lbDineroJ2);
             this.gbOpcionesJ2.Controls.Add(this.btnApostarJ2);
             this.gbOpcionesJ2.Controls.Add(this.lbPuntageJ2);
             this.gbOpcionesJ2.Controls.Add(this.label1);
@@ -67,6 +70,15 @@
             this.gbOpcionesJ2.Size = new System.Drawing.Size(222, 112);
             this.gbOpcionesJ2.TabIndex = 9;
             this.gbOpcionesJ2.TabStop = false;
+            // 
+            // lbDineroJ2
+            // 
+            this.lbDineroJ2.AutoSize = true;
+            this.lbDineroJ2.Location = new System.Drawing.Point(131, 53);
+            this.lbDineroJ2.Name = "lbDineroJ2";
+            this.lbDineroJ2.Size = new System.Drawing.Size(41, 13);
+            this.lbDineroJ2.TabIndex = 16;
+            this.lbDineroJ2.Text = "Dinero:";
             // 
             // btnApostarJ2
             // 
@@ -131,6 +143,7 @@
             // gbOpcionesJ1
             // 
             this.gbOpcionesJ1.Controls.Add(this.btnApostarJ1);
+            this.gbOpcionesJ1.Controls.Add(this.lbDineroJ1);
             this.gbOpcionesJ1.Controls.Add(this.lbPuntageJ1);
             this.gbOpcionesJ1.Controls.Add(this.label6);
             this.gbOpcionesJ1.Controls.Add(this.txtApuestaJ1);
@@ -152,6 +165,15 @@
             this.btnApostarJ1.Text = "Apostar";
             this.btnApostarJ1.UseVisualStyleBackColor = true;
             this.btnApostarJ1.Click += new System.EventHandler(this.btnApostarJ1_Click);
+            // 
+            // lbDineroJ1
+            // 
+            this.lbDineroJ1.AutoSize = true;
+            this.lbDineroJ1.Location = new System.Drawing.Point(131, 58);
+            this.lbDineroJ1.Name = "lbDineroJ1";
+            this.lbDineroJ1.Size = new System.Drawing.Size(41, 13);
+            this.lbDineroJ1.TabIndex = 15;
+            this.lbDineroJ1.Text = "Dinero:";
             // 
             // lbPuntageJ1
             // 
@@ -262,12 +284,10 @@
 
         #endregion
         public System.Windows.Forms.GroupBox gbOpcionesJ2;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtApuestaJ2;
         private System.Windows.Forms.Button btnPedirCartaJ2;
         private System.Windows.Forms.Button btnPasarJ2;
         public System.Windows.Forms.GroupBox gbOpcionesJ1;
-        private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtApuestaJ1;
         private System.Windows.Forms.Button btnPedirCartaJ1;
         private System.Windows.Forms.Button btnPasarJ1;
@@ -279,5 +299,9 @@
         public System.Windows.Forms.Label lbPuntageJ1;
         private System.Windows.Forms.Button btnApostarJ2;
         private System.Windows.Forms.Button btnApostarJ1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lbDineroJ2;
+        public System.Windows.Forms.Label lbDineroJ1;
     }
 }

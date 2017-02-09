@@ -53,6 +53,7 @@
     <Compile Include="DatosDeJugadores.Designer.cs">
       <DependentUpon>DatosDeJugadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Informe.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>

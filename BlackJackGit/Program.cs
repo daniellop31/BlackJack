@@ -13,7 +13,7 @@ namespace BlackJackGit
         public static int DOS_JUGADORES = 1;
 
         //IDENTIFICADOR DE CÓMO SE ESTÁ JUGANDO
-        private static int tipoJuego = 0;
+        private static int tipoJuego = 1;
 
         /// <summary>
         /// The main entry point for the application.
