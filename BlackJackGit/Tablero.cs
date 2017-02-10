@@ -14,6 +14,7 @@ namespace BlackJackGit
     {
         //INDICA SI ESTA ES LA ULTIMA RONDA, SE USA CUANDO EL JUGADOR PASA
         private bool ultimaRonda = false;
+        private static Random n = new Random();
 
         //CONSTANTES PARA LA CREACIÓN DE CARTAS EXTRA
         /// <summary>
@@ -97,35 +98,7 @@ namespace BlackJackGit
             else if (Procesos.contarPuntaje(j2.Cartas) > 21)
             {
                 jugadorGanador = j1;
-            }
-             
-            /*
-            if ((Procesos.contarPuntaje(j1.Cartas)) > 21 && (Procesos.contarPuntaje(j2.Cartas) <= 21))
-            {
-                jugadorGanador = j2;
-            }
-            else
-            {
-                if (Procesos.contarPuntaje(j2.Cartas) > 21 && Procesos.contarPuntaje(j1.Cartas) <=21)
-                {
-                    jugadorGanador = j1;
-                }
-                else
-                {
-                    if ((Procesos.contarPuntaje(j1.Cartas) == Procesos.contarPuntaje(j2.Cartas)) || (Procesos.contarPuntaje(j2.Cartas) == Procesos.contarPuntaje(j1.Cartas)))
-                    {
-                        jugadorGanador = null;
-                    }
-                    else
-                    {
-                        if ((Procesos.contarPuntaje(j1.Cartas) > 21) && (Procesos.contarPuntaje(j2.Cartas) > 21))
-                        {
-                            jugadorGanador = null;
-                        }
-                    }      
-                }
-            }
-            */
+            }                         
             return jugadorGanador;
         }
 
@@ -151,9 +124,16 @@ namespace BlackJackGit
             {
                 btnPasarJ2.Enabled = true;
                 btnPedirCartaJ2.Enabled = true;                
-            }else//SI ES INDIVIDUAL GENERA LA JUGADA DEL PC
+            }else if (Program.TipoJuego == Program.UN_JUGADOR)//SI ES INDIVIDUAL GENERA LA JUGADA DEL PC
             {
-                //TODO: IMPLEMENTAR
+                if (n.Next(2) == 0)
+                {
+                    btnPedirCartaJ2_Click(null, null);
+                }
+                else
+                {
+                    btnPasarJ2_Click(null, null);
+                }
             }
 
             finJuego();
@@ -239,7 +219,8 @@ namespace BlackJackGit
 
         private void btnApostarJ1_Click(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(txtApuestaJ1.Text)<=100000 && txtApuestaJ1.Text != "")
+            if(Convert.ToInt32(txtApuestaJ1.Text)<=100000 && txtApuestaJ1.Text != "" &&
+                Convert.ToInt32(txtApuestaJ1.Text) <= Jugador1.DineroTotal)
             {                
                 Jugador1.Apuesta = Convert.ToInt32(txtApuestaJ1.Text);
                 Jugador1.DineroTotal -= Convert.ToInt32(txtApuestaJ1.Text);
@@ -247,20 +228,41 @@ namespace BlackJackGit
 
                 if (Program.TipoJuego == Program.DOS_JUGADORES)//SI LA PARTIDA ES DE DOS JUGADORES
                 {
+                    txtApuestaJ2.Enabled = true;
                     btnApostarJ2.Enabled = true;
                     btnApostarJ1.Enabled = false;
                     txtApuestaJ1.Enabled = false;
-                }else
+                }else  if(Program.TipoJuego == Program.UN_JUGADOR)
                 {
-                    //TODO: IMPLEMENTAR
+                    int apuesta;
+                    do
+                    {
+                        apuesta = n.Next(1,100001);
+                    } while (apuesta>Jugador2.DineroTotal);
+
+                    Jugador2.Apuesta = apuesta;                   
+                    Jugador2.DineroTotal -= Jugador2.Apuesta;
+                    lbDineroJ2.Text = "Dinero: " + Jugador2.DineroTotal;
+
+                    Procesos.cartasIniciales(this);
+                    //HABILITA LAS OPCIONES DE JUEGO
+                    btnPasarJ1.Enabled = true;
+                    btnPasarJ2.Enabled = true;
+                    btnPedirCartaJ1.Enabled = true;
+                    btnPedirCartaJ2.Enabled = true;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Apuesta inválida", "Haga una apuesta válida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
         private void btnApostarJ2_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtApuestaJ2.Text) <= 100000 && txtApuestaJ2.Text != "")
+            if (Convert.ToInt32(txtApuestaJ2.Text) <= 100000 && txtApuestaJ2.Text != "" &&
+                Convert.ToInt32(txtApuestaJ2.Text) <= Jugador2.DineroTotal)
             {
                 btnApostarJ2.Enabled = false;
                 txtApuestaJ2.Enabled = false;
@@ -300,9 +302,16 @@ namespace BlackJackGit
                 btnPedirCartaJ2.Enabled = true;
                 btnPasarJ1.Enabled = false;
                 btnPedirCartaJ1.Enabled = false;
-            }else//PASO AL PC
+            }else if (Program.TipoJuego == Program.UN_JUGADOR)//PASO AL PC
             {
-                //TODO: IMPLEMENTAR
+                if (n.Next(2) == 0)
+                {
+                    btnPedirCartaJ2_Click(null,null);
+                }
+                else
+                {
+                    btnPasarJ2_Click(null, null);
+                }
             }
 
         }

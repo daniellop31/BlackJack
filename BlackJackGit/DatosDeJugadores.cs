@@ -21,8 +21,6 @@ namespace BlackJackGit
         bool nombreJ2Listo = false;
         bool apuestaJ1Listo = false;
         bool apuestaJ2Listo = false;
-        int apuestaJ1;
-        int apuestaJ2;
 
         private void btnHecho_Click(object sender, EventArgs e)
         {
@@ -38,9 +36,6 @@ namespace BlackJackGit
                 nuevoTablero.gbOpcionesJ1.Text = txtNombreJ1.Text;
                 nuevoTablero.gbOpcionesJ2.Text = txtNombreJ2.Text;
 
-                //formJ.txtApuestaJ2.Text = apuestaj2.ToString("0,0");
-                //apuestaJ1 = Convert.ToInt32(txtApuestaJ1.Text);
-                //nuevoTablero.txtApuestaJ1.Text = apuestaJ1.ToString("0,0");
                 nuevoTablero.txtApuestaJ1.Text = txtApuestaJ1.Text;
                 nuevoTablero.txtApuestaJ2.Text = txtApuestaJ2.Text;
 
@@ -57,11 +52,8 @@ namespace BlackJackGit
                 
                 
                 nuevoTablero.Show();
-                Close();
-                
-            }      
-
-            
+                Close();                
+            }                  
         }
 
         /// <summary>

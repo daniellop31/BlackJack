@@ -12,6 +12,7 @@ namespace BlackJackGit
     {
         //Arrelgo para identificar cada carta
         private static string[] codigoCartas = new string[13];
+        private static Random r = new Random();
         
         public static string[] CodigoCartas
         {
@@ -71,7 +72,6 @@ namespace BlackJackGit
         /// <returns>Carta creada</returns>
         public static Carta pedirCarta()
         {
-            Random r = new Random();
             return new Carta(r.Next(13));
         }
 
