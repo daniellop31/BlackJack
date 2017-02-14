@@ -87,7 +87,36 @@ namespace BlackJackGit
             {
                 totalPuntos += c.Valor;
             }
+
+            if (totalPuntos > 21)
+            {
+                foreach (Carta c in cartas)
+                {
+                    if (c.Codigo == 0)
+                    {
+                        totalPuntos -= 10;
+                    }
+                    if(totalPuntos < 21)
+                    {
+                        break;
+                    }                    
+                }
+            }
+
             return totalPuntos;
+        }
+
+        private static void cambiarValorA(List<Carta> cartas)
+        {
+            foreach(Carta c in cartas)
+            {
+                if (c.Codigo == 0)
+                {
+                    c.Codigo = -1;
+                    c.Valor = 1;                    
+                }
+                break;
+            }
         }
 
         /// <summary>
@@ -102,11 +131,11 @@ namespace BlackJackGit
             nuevoTablero.Jugador2.Cartas.Add(pedirCarta());
             nuevoTablero.imgCarta1J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(0).Imagen;
             nuevoTablero.imgCarta2J1.Image = nuevoTablero.Jugador1.Cartas.ElementAt(1).Imagen;
-            nuevoTablero.lbPuntageJ1.Text = "Puntaje: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador1.Cartas));
+            nuevoTablero.lbPuntageJ1.Text = "Dinero: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador1.Cartas));
             nuevoTablero.lbDineroJ1.Text = "Puntaje: " + nuevoTablero.Jugador1.DineroTotal;
             nuevoTablero.imgCarta1J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(0).Imagen;
             nuevoTablero.imgCarta2J2.Image = nuevoTablero.Jugador2.Cartas.ElementAt(1).Imagen;
-            nuevoTablero.lbPuntageJ2.Text = "Puntaje: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador2.Cartas));
+            nuevoTablero.lbPuntageJ2.Text = "Dinero: " + Convert.ToString(contarPuntaje(nuevoTablero.Jugador2.Cartas));
             nuevoTablero.lbDineroJ2.Text = "Puntaje: " + nuevoTablero.Jugador2.DineroTotal;
         }
     }

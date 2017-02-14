@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnInforme = new System.Windows.Forms.Button();
             this.btnDosJugadores = new System.Windows.Forms.Button();
             this.btnUnJugador = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnInforme
-            // 
-            this.btnInforme.Location = new System.Drawing.Point(12, 70);
-            this.btnInforme.Name = "btnInforme";
-            this.btnInforme.Size = new System.Drawing.Size(93, 23);
-            this.btnInforme.TabIndex = 5;
-            this.btnInforme.Text = "Informe";
-            this.btnInforme.UseVisualStyleBackColor = true;
-            // 
             // btnDosJugadores
             // 
-            this.btnDosJugadores.Location = new System.Drawing.Point(12, 41);
+            this.btnDosJugadores.Location = new System.Drawing.Point(64, 87);
             this.btnDosJugadores.Name = "btnDosJugadores";
             this.btnDosJugadores.Size = new System.Drawing.Size(93, 23);
             this.btnDosJugadores.TabIndex = 4;
@@ -54,7 +44,7 @@
             // 
             // btnUnJugador
             // 
-            this.btnUnJugador.Location = new System.Drawing.Point(12, 12);
+            this.btnUnJugador.Location = new System.Drawing.Point(64, 27);
             this.btnUnJugador.Name = "btnUnJugador";
             this.btnUnJugador.Size = new System.Drawing.Size(93, 23);
             this.btnUnJugador.TabIndex = 3;
@@ -66,8 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 210);
-            this.Controls.Add(this.btnInforme);
+            this.ClientSize = new System.Drawing.Size(233, 142);
             this.Controls.Add(this.btnDosJugadores);
             this.Controls.Add(this.btnUnJugador);
             this.Name = "MenuPrincipal";
@@ -77,8 +66,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnInforme;
         private System.Windows.Forms.Button btnDosJugadores;
         private System.Windows.Forms.Button btnUnJugador;
     }

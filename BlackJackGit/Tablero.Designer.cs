@@ -48,6 +48,8 @@
             this.imgCarta2J2 = new System.Windows.Forms.PictureBox();
             this.imgCarta2J1 = new System.Windows.Forms.PictureBox();
             this.imgCarta1J1 = new System.Windows.Forms.PictureBox();
+            this.lbGanadasJ1 = new System.Windows.Forms.Label();
+            this.lbGanadasJ2 = new System.Windows.Forms.Label();
             this.gbOpcionesJ2.SuspendLayout();
             this.gbOpcionesJ1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J2)).BeginInit();
@@ -254,11 +256,31 @@
             this.imgCarta1J1.TabIndex = 11;
             this.imgCarta1J1.TabStop = false;
             // 
+            // lbGanadasJ1
+            // 
+            this.lbGanadasJ1.AutoSize = true;
+            this.lbGanadasJ1.Location = new System.Drawing.Point(15, 215);
+            this.lbGanadasJ1.Name = "lbGanadasJ1";
+            this.lbGanadasJ1.Size = new System.Drawing.Size(53, 13);
+            this.lbGanadasJ1.TabIndex = 15;
+            this.lbGanadasJ1.Text = "Ganadas:";
+            // 
+            // lbGanadasJ2
+            // 
+            this.lbGanadasJ2.AutoSize = true;
+            this.lbGanadasJ2.Location = new System.Drawing.Point(555, 215);
+            this.lbGanadasJ2.Name = "lbGanadasJ2";
+            this.lbGanadasJ2.Size = new System.Drawing.Size(53, 13);
+            this.lbGanadasJ2.TabIndex = 16;
+            this.lbGanadasJ2.Text = "Ganadas:";
+            // 
             // Tablero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 516);
+            this.Controls.Add(this.lbGanadasJ2);
+            this.Controls.Add(this.lbGanadasJ1);
             this.Controls.Add(this.imgCarta1J2);
             this.Controls.Add(this.imgCarta2J2);
             this.Controls.Add(this.imgCarta2J1);
@@ -279,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta2J1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCarta1J1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -303,5 +326,7 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label lbDineroJ2;
         public System.Windows.Forms.Label lbDineroJ1;
+        private System.Windows.Forms.Label lbGanadasJ1;
+        private System.Windows.Forms.Label lbGanadasJ2;
     }
 }

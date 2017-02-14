@@ -13,6 +13,8 @@ namespace BlackJackGit
         private  List<Carta> cartas = new List<Carta>();
         private int puntaje;
         private int dineroTotal;
+        private int ganadas;
+        private int tempGanadas;
 
         public string Nombre
         {
@@ -79,6 +81,32 @@ namespace BlackJackGit
             }
         }
 
+        public int Ganadas
+        {
+            get
+            {
+                return ganadas;
+            }
+
+            set
+            {
+                ganadas = value;
+            }
+        }
+
+        public int TempGanadas
+        {
+            get
+            {
+                return tempGanadas;
+            }
+
+            set
+            {
+                tempGanadas = value;
+            }
+        }
+
         /// <summary>
         /// Crea una instancia de Jugador con nombre
         /// </summary>
@@ -87,8 +115,8 @@ namespace BlackJackGit
         {
             this.dineroTotal = 500000;
             this.Nombre = nombre;
-        }
-
-        
+            this.ganadas = 0;
+            this.tempGanadas = 0;
+        }        
     }
 }
